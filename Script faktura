@@ -1,0 +1,26 @@
+# Skapa en tom lista för att hålla alla fakturanummer
+
+$fakturor = @()
+
+ 
+
+# Generera 10 fakturanummer med unika nummer
+
+for ($i = 1; $i -le 10; $i++) {
+
+    $unikNummer = Get-Random -Minimum 10000 -Maximum 1000000
+
+    $faktura = "Fakturanr $unikNummer"
+
+    $fakturor += $faktura
+
+}
+
+ 
+
+# Skriv fakturanumren till en textfil
+
+$fakturor | Out-File -FilePath "C:\Users\Lars von Knorring\nic\fakturalista.txt"
+ 
+
+Write-Host "Fakturanummer har exporterats till "C:\Users\Lars von Knorring\nic\fakturalista.txt
